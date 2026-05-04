@@ -1,0 +1,925 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Propiedad Intelectual para Startups — Córdoba</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+  --primary: #A63A4B;
+  --secondary: #a79457;
+  --accent: #A8C96B;
+
+  --bg-main: #FAF7F2;
+  --bg-soft: #3b3325;
+  --text-main: #1A1612;
+  --text-muted: #6B6560;
+  --line: #E4DDD3;
+
+  /* 🔥 NUEVAS */
+  --navy: #1A1612;
+  --light: #9C948A;
+  --muted: #6B6560;
+  --gold: #CAAB89;
+  --warm: #F3EDE3;
+  --mid: #9B714C;
+}
+ 
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+  background: var(--bg-main);
+  color: var(--text-main);
+    font-size: 16px;
+    line-height: 1.6;
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 0 24px 80px;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 80px 0 60px;
+    position: relative;
+  }
+
+  .hero::before {
+    content: '';
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background:
+      radial-gradient(ellipse 70% 50% at 90% 10%, rgba(37,99,168,0.08) 0%, transparent 60%),
+      radial-gradient(ellipse 50% 40% at 10% 90%, rgba(200,149,58,0.06) 0%, transparent 60%);
+    pointer-events: none;
+    z-index: -1;
+  }
+
+  .eyebrow {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 28px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .eyebrow::after {
+    content: '';
+    flex: 1;
+    max-width: 60px;
+    height: 1px;
+    background: var(--accent);
+    opacity: 0.5;
+  }
+
+  h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(38px, 7vw, 64px);
+    line-height: 1.08;
+    color: var(--navy);
+    letter-spacing: -0.02em;
+    margin-bottom: 28px;
+    max-width: 680px;
+  }
+  h2 {
+  color: var(--primary);
+}
+  h1 em {
+    font-style: italic;
+    color: #9B714C;
+  }
+
+  .hero-sub {
+    font-size: 17px;
+    color: var(--muted);
+    max-width: 520px;
+    line-height: 1.7;
+    margin-bottom: 48px;
+    font-weight: 300;
+  }
+
+  .cta-row {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .btn-primary {
+  background: var(--primary);
+  color: #fff;
+  padding: 14px 32px;
+  border-radius: 3px;
+  font-size: 14px;
+  letter-spacing: 0.06em;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 12px rgba(166,58,75,0.25);
+}
+
+.btn-primary:hover {
+  background: #922F3F;
+  transform: translateY(-2px);
+}
+  .btn-ghost {
+  display: inline-block;
+  border: 1px solid #CAAB89;
+  color: #9B714C;
+  padding: 14px 30px;
+  border-radius: 3px;
+  font-size: 14px;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.btn-ghost:hover {
+  background: #CAAB89;
+  color: #fff;
+}
+
+  /* ── DIVIDER ── */
+  .divider {
+    width: 40px;
+    height: 2px;
+    background: var(--primary);
+    margin: 72px 0 64px;
+  }
+
+  /* ── SECTION LABEL ── */
+  .section-label {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--light);
+    margin-bottom: 12px;
+  }
+
+  /* ── PROBLEM SECTION ── */
+  .problem {
+    padding: 0 0 80px;
+  }
+
+  .problem h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(28px, 4vw, 42px);
+    color: var(--navy);
+    line-height: 1.15;
+    margin-bottom: 32px;
+    letter-spacing: -0.01em;
+  }
+
+  .risk-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1px;
+    background: var(--warm);
+    border: 1px solid #E4DDD3;
+    border-radius: 2px;
+    overflow: hidden;
+    margin-top: 40px;
+  }
+
+  .risk-item {
+  background: #fff;
+  padding: 28px 24px;
+  border: 1px solid var(--line);
+  transition: all 0.2s ease;
+}
+
+.risk-item:hover {
+  border-color: var(--primary);
+}
+
+  .risk-icon {
+    font-size: 22px;
+    margin-bottom: 12px;
+  }
+
+  .risk-item h4 {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--navy);
+    margin-bottom: 8px;
+  }
+
+  .risk-item p {
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.55;
+  }
+
+  /* ── VALUE PROP ── */
+  .value {
+    background: var(--primary);
+    color: #fff;
+  .value-col p {
+  color: rgba(255,255,255,0.75);
+}
+
+    padding: 60px 48px;
+    margin: 0 -24px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .value::before {
+    content: 'PI';
+    position: absolute;
+    right: -20px;
+    top: -40px;
+    font-family: 'DM Serif Display', serif;
+    font-size: 220px;
+    color: rgba(255,255,255,0.03);
+    line-height: 1;
+    pointer-events: none;
+  }
+
+  .value .section-label { color: var(--gold); }
+
+  .value h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(26px, 4vw, 38px);
+    color: #fff;
+    line-height: 1.2;
+    margin-bottom: 32px;
+    max-width: 560px;
+    letter-spacing: -0.01em;
+  }
+
+  .value-cols {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    margin-top: 40px;
+  }
+
+  .value-col h4 {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--gold);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+
+  .value-col p {
+    font-size: 14px;
+    color: rgba(255,255,255,0.65);
+    line-height: 1.65;
+    font-weight: 300;
+  }
+
+  /* ── SERVICES ── */
+  .services { padding: 80px 0; }
+
+  .services h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(28px, 4vw, 40px);
+    color: var(--navy);
+    line-height: 1.15;
+    margin-bottom: 48px;
+    letter-spacing: -0.01em;
+  }
+
+  .service-list { display: flex; flex-direction: column; gap: 1px; }
+
+  .service-row {
+    display: grid;
+    grid-template-columns: 1fr 140px;
+    align-items: start;
+    padding: 28px 0;
+    border-top: 1px solid #E4DDD3;
+    gap: 24px;
+    transition: background 0.15s;
+    cursor: default;
+  }
+  .service-row:last-child { border-bottom: 1px solid #E4DDD3; }
+  .service-row:hover .service-name { color: var(--mid); }
+
+  .service-num {
+    font-size: 11px;
+    color: var(--light);
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    margin-bottom: 6px;
+  }
+
+  .service-name {
+    font-size: 17px;
+    font-weight: 500;
+    color: var(--navy);
+    margin-bottom: 6px;
+    transition: color 0.2s;
+  }
+
+  .service-desc {
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.55;
+    font-weight: 300;
+  }
+
+  .service-price {
+    text-align: right;
+    padding-top: 18px;
+  }
+
+  .price-val {
+    font-family: 'DM Serif Display', serif;
+    font-size: 20px;
+    color: var(--navy);
+    display: block;
+  }
+
+  .price-note {
+    font-size: 11px;
+    color: var(--light);
+    display: block;
+    margin-top: 2px;
+  }
+
+  .pack-row {
+    background: var(--primary);
+    color: #fff;
+    padding: 28px 24px;
+    margin-top: 2px;
+    border-radius: 2px;
+    display: grid;
+    grid-template-columns: 1fr 140px;
+    align-items: center;
+    gap: 24px;
+  }
+
+  .pack-label {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 6px;
+  }
+
+  .pack-name {
+    font-size: 18px;
+    font-weight: 500;
+    color: #fff;
+    margin-bottom: 6px;
+  }
+
+  .pack-desc {
+    font-size: 13px;
+    color: rgba(255,255,255,0.55);
+    font-weight: 300;
+  }
+
+  .pack-price {
+    text-align: right;
+  }
+
+  .pack-price-val {
+    font-family: 'DM Serif Display', serif;
+    font-size: 26px;
+    color: #fff;
+    display: block;
+  }
+
+  .pack-price-note {
+    font-size: 11px;
+    color: rgba(255,255,255,0.4);
+    margin-top: 2px;
+  }
+
+  /* ── PROCESS ── */
+  .process { padding: 0 0 80px; }
+
+  .process h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(26px, 4vw, 38px);
+    color: var(--navy);
+    line-height: 1.15;
+    margin-bottom: 48px;
+    letter-spacing: -0.01em;
+  }
+
+  .steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 0;
+    position: relative;
+  }
+
+  .step {
+    padding: 0 24px 0 0;
+    position: relative;
+  }
+
+  .step-num {
+  font-family: 'DM Serif Display', serif;
+  font-size: 48px;
+  color: #CAAB89;
+  opacity: 0.6;
+  line-height: 1;
+  margin-bottom: 16px;
+}
+.step:hover .step-num {
+  opacity: 1;
+  color: #9B714C;
+}
+  .step-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--navy);
+    margin-bottom: 8px;
+  }
+
+  .step-desc {
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.55;
+    font-weight: 300;
+  }
+
+  .step-line {
+    position: absolute;
+    top: 24px;
+    right: 0;
+    width: 1px;
+    height: 48px;
+    background: var(--accent);
+    opacity: 0.3;
+  }
+  .step:last-child .step-line { display: none; }
+
+  /* ── PROFILE ── */
+  .profile {
+    background: var(--warm);
+    border: 1px solid #E4DDD3;
+    padding: 48px;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 48px;
+    align-items: start;
+    margin: 0 0 80px;
+  }
+
+  .profile-left { text-align: center; }
+
+  .avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'DM Serif Display', serif;
+    font-size: 36px;
+    color: #fff;
+    margin: 0 auto 16px;
+  }
+
+  .profile-name {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--navy);
+    margin-bottom: 4px;
+  }
+
+  .profile-title {
+    font-size: 12px;
+    color: var(--muted);
+    line-height: 1.5;
+  }
+
+  .profile-right h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 28px;
+    color: var(--navy);
+    margin-bottom: 16px;
+    letter-spacing: -0.01em;
+  }
+
+  .profile-right p {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.7;
+    margin-bottom: 20px;
+    font-weight: 300;
+  }
+
+  .badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 20px;
+  }
+
+  .badge {
+    display: inline-block;
+    border: 1px solid #D4CCBF;
+    padding: 5px 12px;
+    border-radius: 1px;
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--navy);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  /* ── CTA FINAL ── */
+  .cta-final {
+    text-align: center;
+    padding: 80px 0 40px;
+    border-top: 1px solid #E4DDD3;
+  }
+
+  .cta-final .section-label {
+    display: inline-block;
+    margin-bottom: 20px;
+  }
+
+  .cta-final h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(30px, 5vw, 48px);
+    color: var(--navy);
+    line-height: 1.12;
+    margin-bottom: 16px;
+    letter-spacing: -0.02em;
+  }
+
+  .cta-final p {
+    font-size: 15px;
+    color: var(--muted);
+    margin-bottom: 40px;
+    font-weight: 300;
+  }
+
+  .contact-info {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    margin-top: 40px;
+    padding-top: 32px;
+    border-top: 1px solid #E4DDD3;
+  }
+
+  .contact-item {
+    text-align: center;
+  }
+
+  .contact-label {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--light);
+    margin-bottom: 6px;
+  }
+
+  .contact-val {
+    font-size: 14px;
+    color: var(--navy);
+    font-weight: 500;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    text-align: center;
+    padding: 32px 0 0;
+    font-size: 12px;
+    color: var(--light);
+  }
+
+  /* ── PRINT STYLES ── */
+  @media print {
+    body { max-width: 100%; padding: 0; font-size: 14px; }
+    .hero { min-height: auto; padding: 40px 0 30px; }
+    .value { margin: 0; padding: 40px 24px; }
+    .hero::before { display: none; }
+    .btn-primary, .btn-ghost { display: none; }
+    a { text-decoration: none; color: inherit; }
+  }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero > * {
+    animation: fadeUp 0.6s ease both;
+  }
+  .eyebrow   { animation-delay: 0.0s; }
+  .hero h1   { animation-delay: 0.1s; }
+  .hero-sub  { animation-delay: 0.2s; }
+  .cta-row   { animation-delay: 0.3s; }
+
+  @media (max-width: 600px) {
+    .value { padding: 48px 24px; }
+    .value-cols { grid-template-columns: 1fr; }
+    .profile { grid-template-columns: 1fr; padding: 32px 24px; }
+    .service-row { grid-template-columns: 1fr; }
+    .service-price { text-align: left; padding-top: 8px; }
+    .pack-row { grid-template-columns: 1fr; }
+    .pack-price { text-align: left; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ── HERO ──────────────────────────────────────── -->
+<section class="hero">
+  <div class="eyebrow">Marina Guevara abogada en Propiedad Intelectual</div>
+  <h1>Protegé lo que<br>construiste, <em>antes<br>de que alguien más lo haga</em></h1>
+  <p class="hero-sub">Asesoramiento legal especializado en PI para startups tecnológicas del ecosistema de Córdoba. Marcas, software, diseños y contratos.</p>
+  <div class="cta-row">
+    <a href="#contacto" class="btn-primary">Consulta inicial </a>
+    <a href="#servicios" class="btn-ghost">Ver servicios</a>
+  </div>
+</section>
+
+<!-- ── PROBLEMA ───────────────────────────────────── -->
+<div class="divider"></div>
+
+<section class="problem">
+  <div class="section-label">El problema</div>
+  <h2>Tu startup tiene activos intelectuales. La mayoría no los protege hasta que es tarde.</h2>
+
+  <div class="risk-grid">
+    <div class="risk-item">
+      <div class="risk-icon">⚠️</div>
+      <h4>Squatting de marca</h4>
+      <p>Alguien registra tu nombre antes que vos. Pasa más seguido de lo que parece, especialmente cuando la startup empieza a ganar visibilidad.</p>
+    </div>
+    <div class="risk-item">
+      <div class="risk-icon">🔍</div>
+      <h4>Due diligence de inversores</h4>
+      <p>La primera pregunta de cualquier fondo o acelerador es si la PI está en orden. Sin marca registrada, la negociación se complica o directamente se cae.</p>
+    </div>
+    <div class="risk-item">
+      <div class="risk-icon">💻</div>
+      <h4>Titularidad del software</h4>
+      <p>¿Quién es dueño del código que desarrollaron? Sin contratos claros, la titularidad es una zona gris que puede generar conflictos.</p>
+    </div>
+    <div class="risk-item">
+      <div class="risk-icon">⏱️</div>
+      <h4>Ventana de patentabilidad</h4>
+      <p>Si publicaron su innovación sin haberla patentado antes, el reloj ya está corriendo. La ventana tiene límites temporales estrictos.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── PROPUESTA DE VALOR ─────────────────────────── -->
+<section class="value">
+  <div class="section-label">Por qué trabajar conmigo</div>
+  <h2>Asesoramiento de PI pensado para startups, para seguir creciendo.</h2>
+
+  <div class="value-cols">
+    <div class="value-col">
+      <h4>Formación </h4>
+      <p>Magíster en Propiedad Intelectual y en Data Analytics. Entiendo el negocio antes de asesorarte — evaluando riesgos y priorizo qué proteger primero según tu modelo.</p>
+    </div>
+    <div class="value-col">
+      <h4>Especialización en tech</h4>
+      <p>Trabajo con startups tecnológicas y emprendedores creativos. Conozco los rubros y sé qué activos son críticos en cada uno.</p>
+    </div>
+    <div class="value-col">
+      <h4>Sin lenguaje complejo</h4>
+      <p>Explicaciones claras, plazos reales y costos transparentes desde el primer contacto.</p>
+    </div>
+    <div class="value-col">
+      <h4>Acompañamiento completo</h4>
+      <p>Desde la búsqueda de antecedentes hasta el certificado final. Te mantengo informado en cada paso del trámite.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── SERVICIOS ──────────────────────────────────── -->
+<section class="services" id="servicios">
+  <div class="section-label">Servicios</div>
+  <h2>Qué puedo hacer por tu startup</h2>
+
+  <div class="service-list">
+
+    <div class="service-row">
+      <div>
+        <div class="service-num">01</div>
+        <div class="service-name">Registro de marca ante el INPI</div>
+        <div class="service-desc">Búsqueda de antecedentes + presentación + seguimiento hasta el certificado. Incluye asesoramiento en clases de Niza según tu modelo de negocio.</div>
+      </div>
+      <div class="service-price">
+        <span class="price-val">USD 200–350</span>
+        <span class="price-note">por clase · +USD 150 c/u adicional</span>
+      </div>
+    </div>
+
+    <div class="service-row">
+      <div>
+        <div class="service-num">02</div>
+        <div class="service-name">Software, modelos y diseños industriales</div>
+        <div class="service-desc">Protección del código fuente y obras digitales. Clave para Fintech, Edtech y cualquier plataforma con desarrollo propio.</div>
+      </div>
+      <div class="service-price">
+        <span class="price-val">USD 150–200</span>
+        <span class="price-note">por obra registrada</span>
+      </div>
+    </div>
+
+    <div class="service-row">
+      <div>
+        <div class="service-num">03</div>
+        <div class="service-name">Patente de invención</div>
+        <div class="service-desc">Búsqueda del estado de la técnica + redacción de reivindicaciones + presentación ante el INPI. </div>
+      </div>
+      <div class="service-price">
+        <span class="price-val">USD 600–900</span>
+        <span class="price-note">patente Argentina</span>
+      </div>
+    </div>
+
+    <div class="service-row">
+      <div>
+        <div class="service-num">04</div>
+        <div class="service-name">Contrato de desarrollo, licencias, NDA</div>
+        <div class="service-desc">Redacción con cláusulas de titularidad, confidencialidad y cesión de derechos. Previene conflictos entre socios y con clientes.</div>
+      </div>
+      <div class="service-price">
+        <span class="price-val">USD 250–400</span>
+        <span class="price-note">por contrato</span>
+      </div>
+    </div>
+
+    <div class="service-row">
+      <div>
+        <div class="service-num">05</div>
+        <div class="service-name">Auditoría PI para levantamiento de capital</div>
+        <div class="service-desc">Informe completo del estado de PI de la startup: activos protegidos, riesgos identificados y recomendaciones priorizadas.</div>
+      </div>
+      <div class="service-price">
+        <span class="price-val">USD 400–600</span>
+        <span class="price-note">informe + presentación</span>
+      </div>
+    </div>
+
+    <div class="service-row">
+      <div>
+        <div class="service-num">06</div>
+        <div class="service-name">Consulta inicial de diagnóstico</div>
+        <div class="service-desc">Primera revisión del estado de PI de tu startup. Qué tenés, qué te falta, qué es urgente. Sin compromiso.</div>
+      </div>
+      <div class="service-price">
+        <span class="price-val">Sin cargo</span>
+        <span class="price-note">primera consulta</span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- PACK -->
+  <div class="pack-row" style="margin-top: 16px;">
+    <div>
+      <div class="pack-label">Más elegido</div>
+      <div class="pack-name">Pack Startup Completo</div>
+      <div class="pack-desc">Marca (1 clase) + Registro de software + Contrato tipo de desarrollo + Consultoría inicial de PI. Todo lo que una startup en etapa temprana necesita para estar protegida.</div>
+    </div>
+    <div class="pack-price">
+      <span class="pack-price-val">USD 800–1.100</span>
+      <span class="pack-price-note">tasas INPI/DNDA aparte</span>
+    </div>
+  </div>
+
+  <p style="font-size:12px; color:var(--light); margin-top:16px;">* Los honorarios no incluyen tasas oficiales del INPI ni de la DNDA, que se informan por separado al inicio de cada trámite.</p>
+
+</section>
+
+<!-- ── PROCESO ────────────────────────────────────── -->
+<section class="process">
+  <div class="section-label">Cómo trabajamos</div>
+  <h2>Un proceso claro, sin sorpresas</h2>
+
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">01</div>
+      <div class="step-title">Consulta inicial</div>
+      <div class="step-desc">Revisamos juntos el estado de PI de tu startup. Sin costo, sin compromiso.</div>
+      <div class="step-line"></div>
+    </div>
+    <div class="step">
+      <div class="step-num">02</div>
+      <div class="step-title">Diagnóstico</div>
+      <div class="step-desc">Identifico qué activos proteger primero según tu rubro y etapa.</div>
+      <div class="step-line"></div>
+    </div>
+    <div class="step">
+      <div class="step-num">03</div>
+      <div class="step-title">Propuesta</div>
+      <div class="step-desc">Presupuesto detallado con plazos reales y costos completos (honorarios + tasas).</div>
+      <div class="step-line"></div>
+    </div>
+    <div class="step">
+      <div class="step-num">04</div>
+      <div class="step-title">Trámite</div>
+      <div class="step-desc">Me encargo de todo el proceso. Te mantengo informado en cada paso.</div>
+      <div class="step-line"></div>
+    </div>
+    <div class="step">
+      <div class="step-num">05</div>
+      <div class="step-title">Certificado</div>
+      <div class="step-desc">Recibís tu protección formal y el asesoramiento para mantenerla al día.</div>
+      <div class="step-line"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ── PERFIL ─────────────────────────────────────── -->
+<section>
+  <div class="section-label" style="margin-bottom:32px;">Quién soy</div>
+  <div class="profile">
+    <div class="profile-left">
+      <div class="avatar">M</div>
+      <div class="profile-name">Marina Guevara</div>
+      <div class="profile-title">Abogada<br>Magíster en PI<br>Data Analyst</div>
+    </div>
+    <div class="profile-right">
+      <h2>Formación que marca la diferencia</h2>
+      <p>Soy abogada especialista en Propiedad Intelectual y  con formación en Data Analytics. Me especializo en el ecosistema tech y creativo en Córdoba  principalmente, acompañando a fundadores y emprendedores en el proceso de proteger lo que construyeron.</p>
+      <p>Mi perfil combina el conocimiento jurídico con una mirada analítica orientada a datos — una combinación poco frecuente que me permite entender el negocio de cada cliente antes de asesorarlo.</p>
+      <div class="badges">
+        <span class="badge">Magíster en PI</span>
+        <span class="badge">Abogada</span>
+        <span class="badge">Data Analytics </span>
+        <span class="badge">Ecosistema tech creativo y emprendedor Córdoba</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA FINAL ──────────────────────────────────── -->
+<section class="cta-final" id="contacto">
+  <div class="section-label">Siguiente paso</div>
+  <h2>La primera consulta<br>es sin cargo</h2>
+  <p>Contame en qué etapa está tu startup y qué activos querés proteger.<br>Te respondo en menos de 24 horas.</p>
+ <a href="https://wa.me/5493516661609?text=Hola%20Marina,%20quiero%20asesoramiento%20en%20PI" 
+   class="btn-primary" 
+   target="_blank">
+  Escribime ahora
+</a>
+
+
+  <div class="contact-info">
+    <div style="margin-top:40px;">
+<div class="cta-row" style="margin-top:40px;">
+
+
+</div>
+</div>
+    <div class="contact-item">
+      <div class="contact-label">Email</div>
+      <a href="mailto:marinamercedesguevara@gmail.com" class="contact-val">
+  marinamercedesguevara@gmail.com
+</a>
+    </div>
+    <div class="contact-item">
+      <div class="contact-label">LinkedIn</div>
+      <a href="https://www.linkedin.com/in/marinaguev/" 
+   class="contact-val" 
+   target="_blank">
+  Ver perfil en LinkedIn
+</a>
+    </div>
+    <div class="contact-item">
+      <div class="contact-label">WhatsApp</div>
+      <a href="https://wa.me/5493516661609?text=Hola%20Marina,%20quiero%20asesoramiento%20en%20PI" 
+   class="contact-val" 
+   target="_blank">
+  +54 9 351 666-1609
+</a>
+
+</div>
+    </div>
+    <div class="contact-item">
+      <div class="contact-label">Córdoba, Argentina</div>
+      <div class="contact-val">Atención presencial y virtual</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>Propiedad Intelectual para Startups y creativos · Córdoba, Argentina · 2026</p>
+</footer>
+
+</body>
+</html>
